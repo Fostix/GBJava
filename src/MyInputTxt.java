@@ -14,6 +14,10 @@ public class MyInputTxt {
         arr[num ? 1 : 0] = Integer.parseInt(reading);
     }
 
+<<<<<<< HEAD
+=======
+
+>>>>>>> c7078e6 (make my input txt method two methods)
     public static int[] ReaderMethod() throws Exception {
         int[] arr = new int[2];
         BufferedReader br = new BufferedReader(new FileReader("src/input.txt"));
@@ -24,9 +28,30 @@ public class MyInputTxt {
         while (counter != 2 && (str = br.readLine()) != null) {
             int length = str.length();
             if (str.charAt(0) == 'a') {
+<<<<<<< HEAD
                 FillArrayx(str, arr,false);
             } else if (str.charAt(0) == 'b') {
                 FillArrayx(str, arr,true);
+=======
+                //String reading = "";
+                FillArrayx(str, arr,false);
+//                for (int i = 1; i < length; i++) {
+//                    if (Character.isDigit(str.charAt(i))) {
+//                        reading += Character.toString(str.charAt(i));
+//                    }
+//                }
+                //arr[0] = Integer.parseInt(reading);
+            } else if (str.charAt(0) == 'b') {
+                FillArrayx(str, arr,true);
+
+//                String reading = "";
+//                for (int i = 1; i < length; i++) {
+//                    if (Character.isDigit(str.charAt(i))) {
+//                        reading += Character.toString(str.charAt(i));
+//                    }
+//                }
+//                arr[1] = Integer.parseInt(reading);
+>>>>>>> c7078e6 (make my input txt method two methods)
             }
         counter++;
         }
