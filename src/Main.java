@@ -4,7 +4,6 @@ public class Main {
     public static void main(String[] args) throws Exception {
 
         int[] arr = MyInputTxt.ReaderMethod();
-        // System.out.println(GetPowClass.get_pow(arr[0],arr[1]));
         MyOutputTxt.WriterMethod(GetPowClass.get_pow(arr[0],arr[1]));
     }
 }
