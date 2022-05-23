@@ -7,7 +7,7 @@ public class MyInputTxt {
         String reading = "";
         int length = str.length();
         for (int i = 1; i < length; i++) {
-            if (Character.isDigit(str.charAt(i))) {
+            if (str.charAt(i) == '-' || Character.isDigit(str.charAt(i))) {
                 reading += Character.toString(str.charAt(i));
             }
         }
@@ -16,19 +16,21 @@ public class MyInputTxt {
 
     public static int[] ReaderMethod() throws Exception {
         int[] arr = new int[2];
-        BufferedReader br = new BufferedReader(new FileReader("src/input.txt"));
+        BufferedReader br = new BufferedReader(new FileReader("src/txtFiles/input.txt"));
         String str;
-
+        boolean checkA = true;
+        boolean checkB = true;
 
         byte counter = 0;
-        while (counter != 2 && (str = br.readLine()) != null) {
+        while ((str = br.readLine()) != null) {
             int length = str.length();
-            if (str.charAt(0) == 'a') {
+            if (checkA && str.charAt(0) == 'a') {
                 FillArrayx(str, arr,false);
-            } else if (str.charAt(0) == 'b') {
+                checkA = false;
+            } else if (checkB && str.charAt(0) == 'b') {
                 FillArrayx(str, arr,true);
+                checkB = false;
             }
-        counter++;
         }
     br.close();
     return arr;
